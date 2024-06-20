@@ -10,7 +10,7 @@ class ColoredPath:
 
     def get_colored_path(self, cmap=None):
         if cmap is None: cmap = random.choice(self.COLORMAPS)
-        mpl_cmap = plt.cm.get_cmap(cmap)
+        mpl_cmap = plt.colormaps.get_cmap(cmap)
         path_length = len(self.path)
         for idx,point in enumerate(self.path):
             self.img[point] = mpl_cmap(idx/path_length)[:3]
